@@ -6,7 +6,10 @@
 </head>
 <body>
 <ul>
-    <li th:each="customer : ${customers}" th:text="${customer}"></li>
+    <li th:each="customer : ${customers}">
+        <a href="@{'/customer/'+${customer.id}+'/edit'}"
+           th:text="${customer.firstName + ' ' + customer.lastName}"></a>
+    </li>
 </ul>
 </body>
 </html>
