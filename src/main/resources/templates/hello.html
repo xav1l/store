@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cześć</title>
+</head>
+<body>
+<div th:if="${firstName!=null}">Witaj <span th:text="${firstName}"></span></div>
+<form method="get" action="/hello">
+    <input type="text" name="firstName"/>
+    <input type="submit" value="say hello"/>
+</form>
+<a href="/">Przejdź do strony głównej!<span th:text="${counter}"></span></a>
+</body>
+</html>
