@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edycja</title>
+</head>
+<body>
+<form method="post" th:action="@{/policy/save}" th:object="${policy}">
+    <input type="text" th:field="*{id}" disabled="disabled"/></br>
+    <input type="text" th:field="*{mark}"/></br>
+    <input type="text" th:field="*{model}"/></br>
+    <input type="text" th:field="*{productionYear}"/></br>
+    <input type="text" th:field="*{value}"/></br>
+    <input type="text" th:field="*{expireDate}"/></br>
+    <input type="submit" value="OK"/>
+</form>
+</body>
+</html>
