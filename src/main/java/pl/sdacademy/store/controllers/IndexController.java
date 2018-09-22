@@ -5,17 +5,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sdacademy.store.components.MyClass;
+import pl.sdacademy.store.services.CustomerService;
 
 @Controller
 @RequestMapping("/")
 public class IndexController {
 
     @Autowired
-    MyClass counter;
+    private CustomerService customerService;
 
     @RequestMapping
     public String showIndex(Model model){
-        model.addAttribute("counter",counter.getCounter());
+        model.addAttribute("customers", customerService.findAll());
         return "index";
     }
 }
