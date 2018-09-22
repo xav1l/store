@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorate="index">
 <head>
     <meta charset="UTF-8">
     <title>Edycja</title>
 </head>
 <body>
-<form method="post" th:action="@{/policy/new/save}" th:object="${policyDto}">
-    <input type="text" placeholder="marka" th:field="*{marka}"/><br/>
-    <input type="text" placeholder="model" th:field="*{model}"/><br/>
-    <input type="number" placeholder="rocznik" th:field="*{rocznik}"/><br/>
-    <input type="text" placeholder="nrRej" th:field="*{nrRej}"/><br/>
-    <input type="text" placeholder="firstName" th:field="*{firstName}"/><br/>
-    <input type="text" placeholder="lastName" th:field="*{lastName}"/><br/>
-    <input type="text" placeholder="value" th:field="*{value}"/><br/>
-    <input type="text" placeholder="expireDate" th:field="*{expireDate}"/><br/>
-    <input type="submit" value="OK"/>
-</form>
+<main role="main" layout:fragment="container" class="container">
+    <form method="post" th:action="@{/policy/new/save}" th:object="${policyDto}">
+        <input class="form-control" type="text" placeholder="marka" th:field="*{marka}"/><br/>
+        <input class="form-control" type="text" placeholder="model" th:field="*{model}"/><br/>
+        <input class="form-control" type="number" placeholder="rocznik" th:field="*{rocznik}"/><br/>
+        <input class="form-control" type="text" placeholder="nrRej" th:field="*{nrRej}"/><br/>
+        <input class="form-control" type="text" placeholder="firstName" th:field="*{firstName}"/><br/>
+        <input class="form-control" type="text" placeholder="lastName" th:field="*{lastName}"/><br/>
+        <input class="form-control" type="text" placeholder="value" th:field="*{value}"/><br/>
+        <input class="form-control" type="text" placeholder="expireDate" th:field="*{expireDate}"/><br/>
+        <input class="form-control" type="submit" value="OK"/>
+    </form>
+</main>
 </body>
 </html>

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorate="index">
 <head>
     <meta charset="UTF-8">
     <title>Edycja Klienta</title>
+
 </head>
 <body>
-
-<form method="post" th:action="@{/customer/save}" th:object="${customer}">
-    <input type="text" th:field="*{id}" disabled="disabled"/> <br/>
-    <input type="text" th:field="*{firstName}" /> <br/>
-    <input type="text" th:field="*{lastName}" /> <br/>
-    <input type="submit" value="OK">
-</form>
-
-
+<main role="main" layout:fragment="container" class="container">
+    <form method="post" th:action="@{/customer/save}" th:object="${customer}">
+        <input class="form-control" type="text" th:field="*{id}" readonly="readonly"/></br>
+        <input class="form-control" type="text" th:field="*{firstName}"/></br>
+        <input class="form-control" type="text" th:field="*{lastName}"/></br>
+        <input class="form-control" type="submit" value="OK"/>
+    </form>
+</main>
 </body>
 </html>
